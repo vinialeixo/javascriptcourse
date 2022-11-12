@@ -1,6 +1,4 @@
 'use strict';
-
-// Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -21,25 +19,87 @@ const restaurant = {
       open: 0, // Open 24 hours
       close: 24,
     },
+  },
 
-    order: function (starterIndex, mainIndex) {
-      return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-    },
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 
-    orderDelivery({ time, address, mainIndex, starterIndex }) {
-      console.log(`Order received! ${this.starterMenu[starterIndex]} 
-      and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
-    },
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
+  orderPasta(ing1, ing2, ing3) {
+    console.log(`You ingridients are ${ing1}, ${ing2}, ${ing3}`);
   },
 };
 
+//Spread Element
+// const arr = [8, 9, 0];
+// const newArr = [1, 2, 3, ...arr];
+// console.log(newArr);
+
+// console.log(...newArr);
+
+//add elements inside of object of array
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(restaurant);
+
+//copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
+
+//copy 2 arrays
+// const menuCopy = [...restaurant.mainMenu, ...restaurant.categories];
+// console.log(menuCopy);
+
+// Iterables: arrays, strings, maps, sets. NOT objects
+//esperando quando passamos em uma functions ou em Arrays
+// const str = 'Vinicius';
+// const letters = [...str, ' '];
+// console.log(letters);
+
+// const ingredients = [
+//   prompt('Write you first ingrisient: '),
+//   prompt('the second ingridient: '),
+//   prompt('the third ingridient: '),
+// ];
+
+// console.log(ingredients);
+
+//old fashion
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+//spread operator
+// restaurant.orderPasta(...ingredients);
+
+//Objects
+const newRestauranteCopy = {
+  foundedIn: 1995,
+  ...restaurant,
+  founder: 'Vinicius dias',
+};
+console.log(newRestauranteCopy);
+
+const restauranteCopy = { ...newRestauranteCopy };
+restauranteCopy.name = 'Ristaurante do Dias';
+console.log(restauranteCopy.name);
+console.log(restaurant.name);
+
+/////////////////////
+
 // Destructuring Objects
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del Sole, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Via del Sole, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
+
+// restaurant.orderDelivery({
+//   address: 'Via del Sole, 21',
+//   starterIndex: 1,
+// });
 
 //OBJECT DESTRUCTURING
 //escrever o nomes extatos da propriedade para o destructuring

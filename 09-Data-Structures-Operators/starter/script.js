@@ -35,6 +35,28 @@ const restaurant = {
   },
 };
 
+///////////////////////////////////////
+// Short Circuiting (&& and ||)
+
+///AOR OPERATOR
+// Use ANY data type, return ANY data type, short-circuiting
+// console.log(3 || 'Jonas'); //se o primeiro elemento for verdadeiro, sempre irá considera-lo
+// console.log('' || 'Jonas');
+// console.log(true || 0);
+// console.log(undefined || null);
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+// restaurant.numGuests = 25;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+////AND OPERATOR
+console.log(0 && 'Jonas'); //quando o primeiro elemento for falso
+console.log(7 && 'Jonas'); //o ultimo elemento volta, pq se os dois elementos forem verdadeiro
+
 //Spread Element
 // const arr = [8, 9, 0];
 // const newArr = [1, 2, 3, ...arr];
@@ -74,17 +96,21 @@ const restaurant = {
 // restaurant.orderPasta(...ingredients);
 
 //Objects
-const newRestauranteCopy = {
-  foundedIn: 1995,
-  ...restaurant,
-  founder: 'Vinicius dias',
-};
-console.log(newRestauranteCopy);
+// const newRestauranteCopy = {
+//   foundedIn: 1995,
+//   ...restaurant,
+//   founder: 'Vinicius dias',
+// };
+// console.log(newRestauranteCopy);
 
-const restauranteCopy = { ...newRestauranteCopy };
-restauranteCopy.name = 'Ristaurante do Dias';
-console.log(restauranteCopy.name);
-console.log(restaurant.name);
+// const restauranteCopy = { ...newRestauranteCopy };
+// restauranteCopy.name = 'Ristaurante do Dias';
+// console.log(restauranteCopy.name);
+// console.log(restaurant.name);
+
+/*Rest Pattern */
+//usa os tres pontos, mas faz o oposto do Spread Operator
+//pack elementos to an array
 
 /////////////////////
 

@@ -36,9 +36,45 @@ const restaurant = {
 };
 
 ///////////////////////////////////////
+const rest1 = {
+  name: 'Capri',
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La piazza',
+  owner: 'Giovanni Rossi',
+};
+
+//OR assigment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+
+//nullish assigment operator (null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+//AND assigment operator
+rest1.owner &&= 'ANONYMOUS';
+rest2.owner &&= 'ANONYMOUS';
+
+console.log(rest1);
+console.log(rest2);
+
+//Nullish Operator: bring null and undefined(not 0 or empty)
+
+// restaurant.numGuests = null;
+// const guest2 = restaurant.numGuests || 10;
+// console.log(guest2);
+
+// const guest = restaurant.numGuests ?? 10; //se caso for undefined ou null, ele mostra o 10
+// console.log(guest);
+
 // Short Circuiting (&& and ||)
 
-///AOR OPERATOR
+///OR OPERATOR
 // Use ANY data type, return ANY data type, short-circuiting
 // console.log(3 || 'Jonas'); //se o primeiro elemento for verdadeiro, sempre irá considera-lo
 // console.log('' || 'Jonas');
@@ -47,15 +83,15 @@ const restaurant = {
 // console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 
 // restaurant.numGuests = 25;
-const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guest1);
+// const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guest1);
 
-const guest2 = restaurant.numGuests || 10;
-console.log(guest2);
+// const guest2 = restaurant.numGuests || 10;
+// console.log(guest2);
 
-////AND OPERATOR
-console.log(0 && 'Jonas'); //quando o primeiro elemento for falso
-console.log(7 && 'Jonas'); //o ultimo elemento volta, pq se os dois elementos forem verdadeiro
+// ////AND OPERATOR
+// console.log(0 && 'Jonas'); //quando o primeiro elemento for falso
+// console.log(7 && 'Jonas'); //o ultimo elemento volta, pq se os dois elementos forem verdadeiro
 
 //Spread Element
 // const arr = [8, 9, 0];

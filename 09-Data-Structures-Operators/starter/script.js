@@ -44,6 +44,86 @@ const restaurant = {
   },
 };
 
+// const airline = 'TAP Air Portugal';
+// const plane = 'A320';
+
+// console.log(airline.indexOf('r'));
+// console.log(airline.lastIndexOf('r'));
+
+// console.log(airline.slice(4));
+// console.log(airline.slice(4, 7)); //tamanho do length 7-3 = AIR
+
+// console.log(airline.slice(0, airline.indexOf(' ')));
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
+
+// const checkMiddleSeat = function (seat) {
+//   const s = seat.slice(-1);
+
+//   if (s === 'B' || s === 'E') console.log('U got middle seat');
+//   else console.log('U got lucky');
+// };
+// checkMiddleSeat('11B');
+// checkMiddleSeat('12');
+// checkMiddleSeat('3E');
+
+// const email = 'vi@aleixo';
+// const loginEmail = ' Vi@aleixo';
+
+// const normalizeEmail = loginEmail.toLowerCase().trim();
+
+// console.log(email === normalizeEmail);
+
+//replacing
+// const priceGB = '128,5&';
+// const price = priceGB.replace('&', '$');
+// console.log(price);
+
+// const announce = 'All passenger go to door 23. Boarding gate 23';
+// console.log(announce.replaceAll('door', 'gate'));
+
+// const plane = 'Airbus A320neo';
+// console.log(plane.includes('320'));
+// console.log(plane.startsWith('Air'));
+
+//SPLIT AND JOIN
+// console.log('first+name+go'.split('+')); //transforma em array
+
+// const [firstName, lastName] = 'Vinicius Dias'.split(' ');
+// console.log(firstName, lastName);
+
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' + ');
+// console.log(newName);
+
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
+
+//   for (const n of names) {
+//     // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(' '));
+// };
+
+// capitalizeName('jessica ana smith davis');
+// capitalizeName('vinicius dias');
+
+// const maskCreditCard = function (number) {
+//   const str = number + ''; //convertendo number to a string
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, '*');
+// };
+// console.log(maskCreditCard(82738274284));
+// console.log(maskCreditCard(298493248938392482948294));
+// console.log(maskCreditCard(777388749));
+
+//REPEAT
+const message2 = 'Bad waether... All fliets are delayed';
+console.log(message2.repeat(4));
+
 ///////////////////////////////////////
 // Coding Challenge #3
 
@@ -56,36 +136,51 @@ Let's continue with our football betting app!
 So remove this event from the game events log.
 3. Print the following string to the console: "An event happened, on average, every 9 minutes" 
 (keep in mind that a game has 90 minutes)
-4. Loop over the events and log them to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this:
+4. Loop over the events and log them to the console,
+ marking whether it's in the first half or second half (after 45 min) of the game, like this:
       [FIRST HALF] 17: ⚽️ GOAL
 
 GOOD LUCK 😀
 */
 
-const gameEvents = new Map([
-  [17, '⚽️ GOAL'],
-  [36, '🔁 Substitution'],
-  [47, '⚽️ GOAL'],
-  [61, '🔁 Substitution'],
-  [64, '🔶 Yellow card'],
-  [69, '🔴 Red card'],
-  [70, '🔁 Substitution'],
-  [72, '🔁 Substitution'],
-  [76, '⚽️ GOAL'],
-  [80, '⚽️ GOAL'],
-  [92, '🔶 Yellow card'],
-]);
+// const gameEvents = new Map([
+//   [17, '⚽️ GOAL'],
+//   [36, '🔁 Substitution'],
+//   [47, '⚽️ GOAL'],
+//   [61, '🔁 Substitution'],
+//   [64, '🔶 Yellow card'],
+//   [69, '🔴 Red card'],
+//   [70, '🔁 Substitution'],
+//   [72, '🔁 Substitution'],
+//   [76, '⚽️ GOAL'],
+//   [80, '⚽️ GOAL'],
+//   [92, '🔶 Yellow card'],
+// ]);
 
-//1
-const events = [...new Set(gameEvents.values())];
-// console.log(events);
+// //1
+// const events = [...new Set(gameEvents.values())];
+// // console.log(events);
 
-//2
+// //2
 
-const newGameEvents = gameEvents.delete(64);
-// console.log(gameEvents);
+// const newGameEvents = gameEvents.delete(64);
+// // console.log(gameEvents);
 
-//3
+// //3
+// console.log(
+//   `An event happened, on average, every ${90 / gameEvents.size} minutes`
+// );
+// const time = [...gameEvents.keys()].pop();
+// console.log(time);
+// console.log(
+//   `An event happened, on average, every ${time / gameEvents.size} minutes`
+// );
+// //4
+
+// for (const [key, value] of gameEvents) {
+//   const half = key <= 45 ? 'FIRST HALF' : 'SECOND HALF';
+//   console.log(`[${half}] ${key}: ${value}`);
+// }
 
 // const staffUnique = [...new Set(staff)];
 //MAP

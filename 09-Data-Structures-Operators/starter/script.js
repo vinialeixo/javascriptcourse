@@ -121,8 +121,8 @@ const restaurant = {
 // console.log(maskCreditCard(777388749));
 
 //REPEAT
-const message2 = 'Bad waether... All fliets are delayed';
-console.log(message2.repeat(4));
+// const message2 = 'Bad waether... All fliets are delayed';
+// console.log(message2.repeat(4));
 
 ///////////////////////////////////////
 // Coding Challenge #3

@@ -67,7 +67,7 @@
 */
 
 //Functions Accepting Callback Functions
-
+/*
 const oneWrod = function (str) {
   return str.replace(/ /g, '-').toLowerCase();
 };
@@ -96,3 +96,22 @@ const highFive = function () {
 document.body.addEventListener('click', highFive); //highfive = callback functions
 
 ['jonas', 'Martha', 'Adma'].forEach(highFive);
+*/
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} - ${name}`);
+//   };
+// };
+
+// const greeterHey = greet('hey');
+// greeterHey('Jose');
+// greeterHey('Muricy');
+
+// greet('oi')('gabs');
+
+//ARROW FUNCTIONS
+const greet2 = greeting => name => {
+  console.log(`${greeting} - ${name}`);
+};
+
+greet2('hi')('Caio');

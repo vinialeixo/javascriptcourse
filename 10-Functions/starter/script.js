@@ -1,5 +1,46 @@
 // 'use strict';
 
+/*131 Functions Accepting Callback Functions */
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+//Higher-order functions
+
+const transformer = function (str, fn) {
+  //fin callback functions
+  console.log(`Original string ${str}`);
+  console.log(`Transformed string: ${fn(str)}`); //->chamou a string
+
+  console.log(`Transformed by:${fn.name}`);
+};
+
+transformer('Javascript is the best', upperFirstWord); //passou o nome da funcao, mas nao chasmou
+transformer('Javascript is the best', oneWord);
+//a comunicao se da pelo str, o atributo da frase e depois o atributo que define o funcao
+
+const high5 = function () {
+  console.log('HI');
+};
+
+document.addEventListener('click', high5); //addEventListener é a funcao High-Order Function
+/*130 First-Class and Higher-Order Functions
+FIRST CLASS
+funcoes sao tratadas como valo 
+funcoes sao apenas outro tipo de objeto em JS
+podemos armazenar em variaveis ou propriedades de objetos
+método dentro da functions
+
+Higher-Order Functions
+a function recebe outra funcao como argumento, e retorna um nova funcao ou os dois
+isso é possivel por causa o FIRST-CLASS functions
+
+*/
 // //128
 // // //DEFAULT PARAMETERS
 // // const bookings = [];
